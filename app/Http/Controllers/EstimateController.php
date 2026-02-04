@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Estimate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class EstimateController extends Controller
 {
@@ -49,21 +50,21 @@ class EstimateController extends Controller
 
     public function show(Estimate $estimate)
     {
-        $this->authorize('view', $estimate);
+        Gate::authorize('view', $estimate);
 
         return view('estimates.show', compact('estimate'));
     }
 
     public function edit(Estimate $estimate)
     {
-        $this->authorize('update', $estimate);
+        Gate::authorize('update', $estimate);
 
         return view('estimates.edit', compact('estimate'));
     }
 
     public function update(Request $request, Estimate $estimate)
     {
-        $this->authorize('update', $estimate);
+        Gate::authorize('update', $estimate);
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -89,7 +90,7 @@ class EstimateController extends Controller
 
     public function destroy(Estimate $estimate)
     {
-        $this->authorize('delete', $estimate);
+        Gate::authorize('delete', $estimate);
 
         $estimate->delete();
 
@@ -99,7 +100,7 @@ class EstimateController extends Controller
 
     public function duplicate(Estimate $estimate)
     {
-        $this->authorize('view', $estimate);
+        Gate::authorize('view', $estimate);
 
         $new = $estimate->replicate();
         $new->name = $estimate->name . ' (Copy)';
