@@ -16,16 +16,20 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-slate-800">
-            <div class="flex flex-col items-center">
-                <a href="/" class="flex items-center gap-3">
-                    <x-application-logo class="w-14 h-14 fill-current text-amber-500" />
-                    <span class="text-2xl font-bold text-white tracking-tight">Contractor Estimator</span>
-                </a>
-                <p class="mt-2 text-sm text-slate-400">Professional estimates, every time.</p>
-            </div>
+            <div class="w-full sm:max-w-md relative">
+                <!-- Logo block — positioned absolute, hanging over the card -->
+                <div class="absolute left-1/2 -translate-x-1/2 -top-16 z-10">
+                    <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-xl flex items-center justify-center ring-4 ring-slate-800">
+                        <x-application-logo class="w-16 h-16 fill-current text-white" />
+                    </div>
+                </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+                <!-- Card -->
+                <div class="mt-20 px-6 pt-16 pb-6 bg-white shadow-lg overflow-hidden sm:rounded-xl">
+                    <h1 class="text-center text-xl font-bold text-slate-800 tracking-tight">Contractor Estimator</h1>
+                    <p class="text-center text-sm text-slate-400 mb-6">Professional estimates, every time.</p>
+                    {{ $slot }}
+                </div>
             </div>
         </div>
     </body>
