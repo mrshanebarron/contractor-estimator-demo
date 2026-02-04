@@ -1,15 +1,15 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 relative z-20 overflow-visible">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo + brand name -->
-                <div class="shrink-0 flex items-center relative">
+                <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg flex items-center justify-center absolute -bottom-4 z-30">
-                            <x-application-logo class="w-8 h-8 fill-current text-white" />
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow flex items-center justify-center">
+                            <x-application-logo class="w-6 h-6 fill-current text-white" />
                         </div>
-                        <span class="ps-14 font-bold text-lg text-slate-800 tracking-tight hidden sm:inline">Contractor Estimator</span>
+                        <span class="font-bold text-lg text-slate-800 tracking-tight hidden sm:inline">Contractor Estimator</span>
                     </a>
                 </div>
 
