@@ -1,21 +1,15 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 relative z-20">
-    <!-- Logo Block — absolute, hangs below the nav bottom edge -->
-    <div class="absolute left-4 sm:left-6 lg:left-8 -bottom-5 z-30">
-        <a href="{{ route('dashboard') }}">
-            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg flex items-center justify-center ring-2 ring-white">
-                <x-application-logo class="w-10 h-10 fill-current text-white" />
-            </div>
-        </a>
-    </div>
-
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 relative z-20 overflow-visible">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Spacer for logo + brand name -->
-                <div class="shrink-0 flex items-center ps-20">
-                    <a href="{{ route('dashboard') }}" class="flex items-center">
-                        <span class="font-bold text-lg text-slate-800 tracking-tight hidden sm:inline">Contractor Estimator</span>
+                <!-- Logo + brand name -->
+                <div class="shrink-0 flex items-center relative">
+                    <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg flex items-center justify-center absolute -bottom-4 z-30">
+                            <x-application-logo class="w-8 h-8 fill-current text-white" />
+                        </div>
+                        <span class="ps-14 font-bold text-lg text-slate-800 tracking-tight hidden sm:inline">Contractor Estimator</span>
                     </a>
                 </div>
 
