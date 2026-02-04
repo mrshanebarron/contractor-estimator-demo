@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('labor_rate', 10, 2)->default(0);
 
             // Materials - stored as JSON array [{name, quantity, unit_cost}]
-            $table->json('materials')->default('[]');
+            $table->json('materials')->nullable();
 
             // Overhead & profit percentages
             $table->decimal('overhead_percent', 5, 2)->default(10);
