@@ -6,9 +6,7 @@
                 <!-- Logo + brand name -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow flex items-center justify-center">
-                            <x-application-logo class="w-6 h-6 fill-current text-white" />
-                        </div>
+                        <x-application-logo class="w-10 h-10 fill-current text-amber-500" />
                         <span class="font-bold text-lg text-slate-800 tracking-tight hidden sm:inline">Contractor Estimator</span>
                     </a>
                 </div>

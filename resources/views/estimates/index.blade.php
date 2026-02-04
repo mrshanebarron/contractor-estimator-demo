@@ -30,16 +30,18 @@
                     </a>
                 </div>
             @else
-                <form method="GET" action="{{ route('estimates.compare') }}" x-data="{ selected: [] }">
+                <div x-data="{ selected: [] }">
                     {{-- Compare button --}}
                     <div class="mb-4 flex justify-end" x-show="selected.length >= 2" x-cloak>
-                        <template x-for="id in selected" :key="id">
-                            <input type="hidden" name="ids[]" :value="id">
-                        </template>
-                        <button type="submit" class="inline-flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            Compare (<span x-text="selected.length"></span>)
-                        </button>
+                        <form method="GET" action="{{ route('estimates.compare') }}">
+                            <template x-for="id in selected" :key="id">
+                                <input type="hidden" name="ids[]" :value="id">
+                            </template>
+                            <button type="submit" class="inline-flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                Compare (<span x-text="selected.length"></span>)
+                            </button>
+                        </form>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -106,7 +108,7 @@
                         </div>
                         @endforeach
                     </div>
-                </form>
+                </div>
             @endif
         </div>
     </div>
